@@ -2,3 +2,8 @@
 
 Graph_Hackathon_job_folder.zip
 Child_care_raw_data/*
+.env
+childcare_db/childcare_data.csv
+childcare_db/*.db
+childcare_db/venv*
+childcare_db/__pycache__*
