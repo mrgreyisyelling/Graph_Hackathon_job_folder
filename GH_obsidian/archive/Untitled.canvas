@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"df09b98ead31fca4","type":"file","file":"archive/Pasted image 20250205122709.png","x":-360,"y":-220,"width":400,"height":200},
+		{"id":"f867d7a90d51ad0a","type":"text","text":" but what I want to do is map meaning. I want to be a skilled explorer of the content of the data on web3. I want to build tools that makes collecting and maintaining these structures non-problematic.","x":-165,"y":34,"width":445,"height":186},
+		{"id":"13951548621ca376","type":"file","file":"archive/202502051230.md","x":-288,"y":249,"width":400,"height":2611},
+		{"id":"c9d83140fe04cfb6","type":"file","file":"archive/202502051231.md","x":-540,"y":3020,"width":400,"height":400},
+		{"id":"ba4b1db5e557f136","type":"file","file":"archive/202502051233.md","x":-1210,"y":1790,"width":400,"height":400},
+		{"id":"b71ae6e30d2cbb89","type":"file","file":"archive/Pasted image 20250205125754.png","x":260,"y":2540,"width":400,"height":294},
+		{"id":"bccccd14940b0f18","type":"file","file":"archive/Pasted image 20250205125827.png","x":260,"y":2917,"width":400,"height":206}
+	],
+	"edges":[]
+}
