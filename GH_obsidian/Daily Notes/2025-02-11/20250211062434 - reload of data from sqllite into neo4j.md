@@ -213,7 +213,8 @@ MATCH ()-[r]->() RETURN COUNT(r);
 
 ```cypher
 MATCH (f:Facility)-[:LOCATED_IN]->(l:Location)
-RETURN f.name, l.city, l.state, l.zip_code LIMIT 10;
+
+RETURN f.name, l.city, l.state, l.zip_code, l.location_name LIMIT 10;
 ```
 
 ### **Check Facility → Owner Links**

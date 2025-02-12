@@ -10,10 +10,11 @@ We will **extract `facility_name` from `Facility` and `Location`**, create an **
 // Step 1: Create Attribute Entity for Facility Names
 MATCH (f:Facility)
 MERGE (attr:Attribute {name: "facility_name"})
-MERGE (val:Value {value: f.name})
+MERGE (val:Value {value: f.name})  // Ensure the correct facility name is stored
 MERGE (attr)-[:OF_VALUE]->(val)
 MERGE (f)-[:HAS]->(attr)
-MERGE (f)-[:OF_VALUE]->(val);
+MERGE (f)-[:OF_VALUE]->(val)
+RETURN f.name, val.value;
 ```
 
 ✅ **This does the following:**
@@ -29,8 +30,8 @@ MERGE (f)-[:OF_VALUE]->(val);
 ```cypher
 // Step 2: Link Locations to the Same Facility Name Attribute and Value
 MATCH (l:Location)
-MERGE (attr:Attribute {name: "facility_name"})
-MERGE (val:Value {value: l.facility_name})
+MERGE (attr:Attribute {name: "location_name"})
+MERGE (val:Value {value: l.location_name})
 MERGE (attr)-[:OF_VALUE]->(val)
 MERGE (l)-[:HAS]->(attr)
 MERGE (l)-[:OF_VALUE]->(val);
