@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"c48d0f599ba87787","x":-590,"y":-20,"width":620,"height":240,"type":"group","label":"job "},
+		{"id":"f206de597fbc2f3c","x":-590,"y":-280,"width":620,"height":200,"type":"group","label":"pre job"},
+		{"id":"3289f5f662270662","x":-590,"y":-440,"width":620,"height":100,"type":"group","label":"set up"},
+		{"id":"d4fdc9d7fb924028","x":-571,"y":-420,"width":235,"height":60,"type":"text","text":"Add A job"},
+		{"id":"7d3e8c658bb11531","x":-224,"y":-420,"width":235,"height":60,"type":"text","text":"Add a daycare"},
+		{"id":"40f442ad5396ac52","x":-240,"y":-260,"width":250,"height":60,"type":"text","text":"pays deposit to lock everything in"},
+		{"id":"418a07c4460e1c60","x":-240,"y":-160,"width":250,"height":60,"type":"text","text":"daycare paid on escrow"},
+		{"id":"3141cbf5869f9b33","x":-570,"y":-260,"width":250,"height":60,"type":"text","text":"accept job"},
+		{"id":"1b6559fe2683b53b","x":-240,"y":0,"width":250,"height":60,"type":"text","text":"activate childcare contract"},
+		{"id":"9b4e8bf8cfe955c5","x":-240,"y":140,"width":250,"height":60,"type":"text","text":"resolve job and childcare contracts"},
+		{"id":"fc4902ea2edbe49d","x":-570,"y":0,"width":250,"height":60,"type":"text","text":"person goes to job \ndrops off kid"},
+		{"id":"911f76d90ac55214","x":-570,"y":140,"width":250,"height":60,"type":"text","text":"activate job contract"},
+		{"id":"52873a5fe5c2863a","x":140,"y":140,"width":250,"height":60,"type":"text","text":"profit"}
+	],
+	"edges":[
+		{"id":"394ad7586f3384f8","fromNode":"3141cbf5869f9b33","fromSide":"right","toNode":"40f442ad5396ac52","toSide":"left"},
+		{"id":"63de5a1f4882f6db","fromNode":"40f442ad5396ac52","fromSide":"bottom","toNode":"418a07c4460e1c60","toSide":"top"},
+		{"id":"8630c7c094e0a331","fromNode":"fc4902ea2edbe49d","fromSide":"bottom","toNode":"911f76d90ac55214","toSide":"top"},
+		{"id":"f638321c173c1abb","fromNode":"fc4902ea2edbe49d","fromSide":"right","toNode":"1b6559fe2683b53b","toSide":"left"},
+		{"id":"c390f0c03f2a6fe5","fromNode":"1b6559fe2683b53b","fromSide":"bottom","toNode":"9b4e8bf8cfe955c5","toSide":"top"},
+		{"id":"609c88d86dc0a77d","fromNode":"911f76d90ac55214","fromSide":"right","toNode":"9b4e8bf8cfe955c5","toSide":"left"},
+		{"id":"21bf68637a5a9feb","fromNode":"9b4e8bf8cfe955c5","fromSide":"right","toNode":"52873a5fe5c2863a","toSide":"left"}
+	]
+}

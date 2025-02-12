@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"5ca0ddb25af8dc0c","x":-180,"y":-200,"width":325,"height":90,"type":"text","text":"Knowledge graph of: Daycares\nchildcare providers\n"},
+		{"id":"8ac21a8a3cfef362","x":-142,"y":-360,"width":250,"height":60,"type":"text","text":"create daycare"},
+		{"id":"51f14c99c330855c","x":-142,"y":-40,"width":250,"height":60,"type":"text","text":"Query of available daycares"},
+		{"id":"e19a5d6c9201d194","x":600,"y":-40,"width":250,"height":60,"type":"text","text":"query of jobs"},
+		{"id":"f2ed1c1a65bb577d","x":600,"y":-185,"width":250,"height":60,"type":"text","text":"KG of available job"},
+		{"id":"3a50ca3a0bd7067b","x":600,"y":-360,"width":250,"height":60,"type":"text","text":"create job data"},
+		{"id":"8a28ae9d797cde7f","x":240,"y":100,"width":250,"height":60,"type":"text","text":"match job and daycare"},
+		{"id":"484b1f3215fb255b","x":206,"y":240,"width":318,"height":81,"type":"text","text":"accepting job starts process to lock in childcare"},
+		{"id":"11f8dc37390c8deb","x":242,"y":426,"width":248,"height":54,"type":"text","text":"goes to job, drops off kid"},
+		{"id":"0874a083f43e919f","x":-124,"y":612,"width":250,"height":60,"type":"text","text":"activate child care contract"},
+		{"id":"18ab39a4159f0d17","x":240,"y":740,"width":250,"height":60,"type":"text","text":"resolve job and childcare contracts"},
+		{"id":"0db8e10de4c89903","x":600,"y":606,"width":250,"height":66,"type":"text","text":"activate job"},
+		{"id":"34a648d07b36300c","x":240,"y":940,"width":250,"height":60,"type":"text","text":"profit"}
+	],
+	"edges":[
+		{"id":"2f7f125a331c9810","fromNode":"51f14c99c330855c","fromSide":"top","toNode":"5ca0ddb25af8dc0c","toSide":"bottom"},
+		{"id":"59998a5f93ab3c94","fromNode":"e19a5d6c9201d194","fromSide":"top","toNode":"f2ed1c1a65bb577d","toSide":"bottom"},
+		{"id":"3afe03c97ff7017f","fromNode":"8ac21a8a3cfef362","fromSide":"bottom","toNode":"5ca0ddb25af8dc0c","toSide":"top"},
+		{"id":"a307c82bdd84ae52","fromNode":"3a50ca3a0bd7067b","fromSide":"bottom","toNode":"f2ed1c1a65bb577d","toSide":"top"},
+		{"id":"fff4101b3c9e09fd","fromNode":"e19a5d6c9201d194","fromSide":"left","toNode":"8a28ae9d797cde7f","toSide":"right"},
+		{"id":"3473ee4fcdf74b64","fromNode":"51f14c99c330855c","fromSide":"right","toNode":"8a28ae9d797cde7f","toSide":"left"},
+		{"id":"295af7b6c0d515cd","fromNode":"8a28ae9d797cde7f","fromSide":"bottom","toNode":"484b1f3215fb255b","toSide":"top"},
+		{"id":"2bedbe844b554b1d","fromNode":"484b1f3215fb255b","fromSide":"bottom","toNode":"11f8dc37390c8deb","toSide":"top"},
+		{"id":"b99c17ca04b14ace","fromNode":"11f8dc37390c8deb","fromSide":"bottom","toNode":"0874a083f43e919f","toSide":"top"},
+		{"id":"0fd9235987dcc670","fromNode":"11f8dc37390c8deb","fromSide":"bottom","toNode":"0db8e10de4c89903","toSide":"top"},
+		{"id":"a99cd8ea14051d22","fromNode":"0db8e10de4c89903","fromSide":"left","toNode":"18ab39a4159f0d17","toSide":"right"},
+		{"id":"f7cc1dbc2c0448d2","fromNode":"0874a083f43e919f","fromSide":"right","toNode":"18ab39a4159f0d17","toSide":"left"},
+		{"id":"4c838db800982a1e","fromNode":"18ab39a4159f0d17","fromSide":"bottom","toNode":"34a648d07b36300c","toSide":"top"}
+	]
+}
