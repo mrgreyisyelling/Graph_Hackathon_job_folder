@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Notes/2025-02-13/20250213105224.md",
+                "file": "Daily Notes/2025-02-13/Graph Hackathon - Knowledge Graph - 20250213034344.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20250213105224"
+              "title": "Graph Hackathon - Knowledge Graph - 20250213034344"
             }
           }
         ]
@@ -170,53 +170,17 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "floating": {
-    "id": "beac2b0ff4342bc0",
-    "type": "floating",
-    "children": [
-      {
-        "id": "f56282ab6a34f04d",
-        "type": "window",
-        "children": [
-          {
-            "id": "87b9e76e0269ea14",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "1f13412a7fa35871",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "Excalidraw/20250213103133 2025-02-13 10.37.49.excalidraw.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "20250213103133 2025-02-13 10.37.49.excalidraw"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 28,
-        "y": 560,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "7508be70a8802b90",
   "lastOpenFiles": [
-    "Excalidraw/20250213103133 2025-02-13 10.37.49.excalidraw.md",
     "Daily Notes/2025-02-13/20250213105224.md",
     "Daily Notes/2025-02-13/20250213103133.md",
+    "Daily Notes/2025-02-13/20250213095659.md",
+    "Daily Notes/2025-02-13/20250213095257.md",
+    "Daily Notes/2025-02-13/Graph Hackathon - Knowledge Graph - 20250213034344.md",
+    "Excalidraw/20250213103133 2025-02-13 10.37.49.excalidraw.md",
     "Excalidraw/20250213080644 2025-02-13 08.07.10.excalidraw.md",
     "Pasted Image 20250213103853_048.png",
     "Pasted Image 20250213103853_040.png",
-    "Daily Notes/2025-02-13/20250213095659.md",
-    "Daily Notes/2025-02-13/20250213095257.md",
     "Daily Notes/2025-02-13/20250213094622.md",
     "Daily Notes/2025-02-13/20250213092619.md",
     "Daily Notes/2025-02-13/20250213091829.md",
@@ -237,7 +201,6 @@
     "Daily Notes/2025-02-13/20250213080623.md",
     "Excalidraw/20250212102709 2025-02-12 11.22.22.excalidraw.md",
     "Excalidraw/20250212113302 2025-02-12 11.33.11.excalidraw.md",
-    "Excalidraw/Drawing 2025-02-12 15.41.19.excalidraw.md",
     "Pasted image 20250213053015.png",
     "Pasted Image 20250212103144_610.png",
     "Pasted Image 20250212103144_446.png",
