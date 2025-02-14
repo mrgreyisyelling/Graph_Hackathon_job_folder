@@ -7,6 +7,7 @@ CORS(app)
 
 DB_PATH = "database/jobs/jobs.db"
 
+
 @app.route("/api/social_unit_impact", methods=["GET"])
 def social_unit_impact():
     """

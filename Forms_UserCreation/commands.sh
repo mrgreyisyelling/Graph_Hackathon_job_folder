@@ -11,6 +11,7 @@ python3 Forms_UserCreation/backend/api/search_workers.py
 python3 Forms_UserCreation/database/setup/update_db.py
 python3 Forms_UserCreation/backend/api/manage_availability_needs.py
 python3 Forms_UserCreation/backend/api/filter_workers.py
+python3 Forms_UserCreation/backend/api/generate_childcare_jobs.py
 
 python3 backend/server.py
 
