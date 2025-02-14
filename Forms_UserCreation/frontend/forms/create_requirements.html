@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Job Requirements</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Assign Requirements to a Job</h2>
+        <form id="requirementsForm">
+            <label>Job ID</label>
+            <input type="text" name="job_id" required>
+
+            <label>Requirement (Skill ID or Other)</label>
+            <input type="text" name="requirement" required>
+
+            <button type="submit">Assign Requirement</button>
+        </form>
+
+        <h2>Job Requirements</h2>
+        <button onclick="fetchRequirements()">Refresh Requirements</button>
+        <table border="1" id="requirementsTable">
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Requirement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Requirements will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("requirementsForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jsonData = Object.fromEntries(formData);
+
+            let response = await fetch("http://127.0.0.1:5004/api/create_requirement", {
+                method: "POST",
+                body: JSON.stringify(jsonData),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            let result = await response.json();
+            alert(result.message);
+            fetchRequirements(); // Refresh requirement list
+        };
+
+        async function fetchRequirements() {
+            let response = await fetch("http://127.0.0.1:5004/api/get_requirements");
+            let data = await response.json();
+
+            let tableBody = document.getElementById("requirementsTable").querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            data.requirements.forEach(req => {
+                let row = `<tr>
+                    <td>${req.job_id}</td>
+                    <td>${req.requirement}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        fetchRequirements(); // Load job requirements on page load
+    </script>
+</body>
+</html>

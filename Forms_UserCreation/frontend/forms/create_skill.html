@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Skill</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create a Skill</h2>
+        <form id="skillForm">
+            <label>Skill Name</label>
+            <input type="text" name="skill_name" required>
+            <button type="submit">Create Skill</button>
+        </form>
+
+        <h2>Available Skills</h2>
+        <button onclick="fetchSkills()">Refresh Skills</button>
+        <table border="1" id="skillsTable">
+            <thead>
+                <tr>
+                    <th>Skill ID</th>
+                    <th>Skill Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Skills will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("skillForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jsonData = Object.fromEntries(formData);
+
+            let response = await fetch("http://127.0.0.1:5003/api/create_skill", {
+                method: "POST",
+                body: JSON.stringify(jsonData),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            let result = await response.json();
+            alert(result.message);
+            fetchSkills(); // Refresh skill list
+        };
+
+        async function fetchSkills() {
+            let response = await fetch("http://127.0.0.1:5003/api/get_skills");
+            let data = await response.json();
+
+            let tableBody = document.getElementById("skillsTable").querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            data.skills.forEach(skill => {
+                let row = `<tr>
+                    <td>${skill.id}</td>
+                    <td>${skill.name}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        fetchSkills(); // Load skills on page load
+    </script>
+</body>
+</html>

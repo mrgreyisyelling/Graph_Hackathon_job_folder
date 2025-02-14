@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Workers for a Job</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Search for Workers</h2>
+        <form id="filterForm">
+            <label>Job ID</label>
+            <input type="text" name="job_id" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>Available Workers (No Special Requirements)</h2>
+        <table border="1" id="availableNoReqs">
+            <thead>
+                <tr><th>Worker ID</th><th>Name</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Available Workers (With Special Requirements)</h2>
+        <table border="1" id="availableWithReqs">
+            <thead>
+                <tr><th>Worker ID</th><th>Name</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <h2>Capable but Not Available</h2>
+        <table border="1" id="capableNotAvailable">
+            <thead>
+                <tr><th>Worker ID</th><th>Name</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("filterForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jobId = formData.get("job_id");
+
+            let response = await fetch(`http://127.0.0.1:5007/api/filter_workers?job_id=${jobId}`);
+            let data = await response.json();
+
+            updateTable("availableNoReqs", data.available_no_reqs);
+            updateTable("availableWithReqs", data.available_with_reqs);
+            updateTable("capableNotAvailable", data.capable_not_available);
+        };
+
+        function updateTable(tableId, data) {
+            let tableBody = document.getElementById(tableId).querySelector("tbody");
+            tableBody.innerHTML = "";
+            data.forEach(worker => {
+                let row = `<tr><td>${worker.id}</td><td>${worker.name}</td></tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+    </script>
+</body>
+</html>

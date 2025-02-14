@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Job</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create a Job</h2>
+        <form id="jobForm">
+            <label>Job Title</label>
+            <input type="text" name="job_title" required>
+
+            <label>Job Description</label>
+            <textarea name="job_description" required></textarea>
+
+            <button type="submit">Create Job</button>
+        </form>
+
+        <h2>Available Jobs</h2>
+        <button onclick="fetchJobs()">Refresh Jobs</button>
+        <table border="1" id="jobsTable">
+            <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Jobs will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("jobForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jsonData = Object.fromEntries(formData);
+
+            let response = await fetch("http://127.0.0.1:5004/api/create_job", {
+                method: "POST",
+                body: JSON.stringify(jsonData),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            let result = await response.json();
+            alert(result.message);
+            fetchJobs(); // Refresh job list
+        };
+
+        async function fetchJobs() {
+            let response = await fetch("http://127.0.0.1:5004/api/get_jobs");
+            let data = await response.json();
+
+            let tableBody = document.getElementById("jobsTable").querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            data.jobs.forEach(job => {
+                let row = `<tr>
+                    <td>${job.id}</td>
+                    <td>${job.title}</td>
+                    <td>${job.description}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        fetchJobs(); // Load jobs on page load
+    </script>
+</body>
+</html>

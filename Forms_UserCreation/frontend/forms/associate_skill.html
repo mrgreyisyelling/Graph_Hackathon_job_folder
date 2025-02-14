@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Associate Skill</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Associate a Skill to a User</h2>
+        <form id="associateSkillForm">
+            <label>User ID</label>
+            <input type="text" name="user_id" required>
+
+            <label>Skill ID</label>
+            <input type="text" name="skill_id" required>
+
+            <button type="submit">Associate Skill</button>
+        </form>
+
+        <h2>Users and Their Skills</h2>
+        <button onclick="fetchUserSkills()">Refresh User Skills</button>
+        <table border="1" id="userSkillsTable">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>Skill</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User Skills will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("associateSkillForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jsonData = Object.fromEntries(formData);
+
+            let response = await fetch("http://127.0.0.1:5003/api/associate_skill", {
+                method: "POST",
+                body: JSON.stringify(jsonData),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            let result = await response.json();
+            alert(result.message);
+            fetchUserSkills(); // Refresh user skills
+        };
+
+        async function fetchUserSkills() {
+            let response = await fetch("http://127.0.0.1:5003/api/get_user_skills");
+            let data = await response.json();
+
+            let tableBody = document.getElementById("userSkillsTable").querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            data.user_skills.forEach(entry => {
+                let row = `<tr>
+                    <td>${entry.user_id}</td>
+                    <td>${entry.user_name}</td>
+                    <td>${entry.skill}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        fetchUserSkills(); // Load user skills on page load
+    </script>
+</body>
+</html>

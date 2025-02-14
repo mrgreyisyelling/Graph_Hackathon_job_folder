@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Workers for a Job</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Search for Workers</h2>
+        <form id="searchForm">
+            <label>Job ID</label>
+            <input type="text" name="job_id" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <h2>Matching Workers</h2>
+        <table border="1" id="workersTable">
+            <thead>
+                <tr>
+                    <th>Worker ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Workers will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("searchForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jsonData = Object.fromEntries(formData);
+
+            let response = await fetch(`http://127.0.0.1:5005/api/search_workers?job_id=${jsonData.job_id}`);
+            let data = await response.json();
+
+            let tableBody = document.getElementById("workersTable").querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            data.workers.forEach(worker => {
+                let row = `<tr>
+                    <td>${worker.id}</td>
+                    <td>${worker.name}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        };
+    </script>
+</body>
+</html>

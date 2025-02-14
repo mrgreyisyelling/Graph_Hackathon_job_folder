@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Define Needs</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Define Your Needs</h2>
+        <form id="needsForm">
+            <label>User ID</label>
+            <input type="text" name="user_id" required>
+
+            <label>Need</label>
+            <input type="text" name="need" placeholder="e.g., Childcare, Transportation" required>
+
+            <button type="submit">Add Need</button>
+        </form>
+
+        <h2>Your Needs</h2>
+        <table border="1" id="needsTable">
+            <thead>
+                <tr>
+                    <th>Need</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Needs will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("needsForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jsonData = Object.fromEntries(formData);
+
+            let response = await fetch("http://127.0.0.1:5006/api/add_need", {
+                method: "POST",
+                body: JSON.stringify(jsonData),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            let result = await response.json();
+            alert(result.message);
+            fetchNeeds(jsonData.user_id);
+        };
+
+        async function fetchNeeds(user_id) {
+            let response = await fetch(`http://127.0.0.1:5006/api/get_needs?user_id=${user_id}`);
+            let data = await response.json();
+
+            let tableBody = document.getElementById("needsTable").querySelector("tbody");
+            tableBody.innerHTML = "";
+
+            data.needs.forEach(item => {
+                let row = `<tr><td>${item.need}</td></tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+    </script>
+</body>
+</html>

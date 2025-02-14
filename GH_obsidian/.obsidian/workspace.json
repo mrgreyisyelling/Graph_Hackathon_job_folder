@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214110107 - Creating relationships.md",
+                "file": "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214013223.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graph Hackathon - Knowledge Graph - 20250214110107 - Creating relationships"
+              "title": "Graph Hackathon - Knowledge Graph - 20250214013223"
             }
           }
         ],
@@ -183,11 +183,58 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
+  "floating": {
+    "id": "3183d71c13a786e1",
+    "type": "floating",
+    "children": [
+      {
+        "id": "8d6dcf6bed270df7",
+        "type": "window",
+        "children": [
+          {
+            "id": "fbac040ac7eab857",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d178e5da80bfcf12",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "Excalidraw/2025-02-14 2025-02-14 09.08.32.excalidraw.md"
+                  },
+                  "icon": "excalidraw-icon",
+                  "title": "2025-02-14 2025-02-14 09.08.32.excalidraw"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 2185,
+        "y": 312,
+        "width": 1336,
+        "height": 1061,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "6d0aa177070d21df",
   "lastOpenFiles": [
-    "Pasted image 20250214110125.png",
+    "Pasted image 20250214133240.png",
     "Excalidraw/2025-02-14 2025-02-14 09.08.32.excalidraw.md",
+    "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214013223.md",
+    "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214011437 - **Extending the System to Capture Workers' Availability and Needs**.md",
+    "Pasted image 20250214131511.png",
+    "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214010038.md",
+    "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214124325.md",
+    "Pasted image 20250214130040.png",
+    "Pasted image 20250214124336.png",
+    "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214122833.md",
     "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214110107 - Creating relationships.md",
+    "Pasted image 20250214122834.png",
+    "Pasted image 20250214110125.png",
     "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214104747 - finished creating users locally.md",
     "Pasted image 20250214105820.png",
     "Excalidraw/20250212045112 2025-02-12 04.51.32.excalidraw.md",
@@ -210,18 +257,8 @@
     "Daily Notes/2025-02-13/20250213091829.md",
     "Daily Notes/2025-02-13/20250213091208.md",
     "Daily Notes/2025-02-13/20250213090718.md",
-    "Daily Notes/2025-02-13/20250213090538.md",
-    "Daily Notes/2025-02-13/20250213085714.md",
-    "Daily Notes/2025-02-13/20250213085712.md",
-    "Daily Notes/2025-02-13/20250213085343.md",
-    "Daily Notes/2025-02-13/20250213084942.md",
     "Pasted Image 20250213081119_196.png",
     "Pasted image 20250213053015.png",
-    "Pasted Image 20250212103144_610.png",
-    "Pasted Image 20250212103144_446.png",
-    "Pasted image 20250212074020 1.png",
-    "Pasted Image 20250212074459_640.png",
-    "Pasted Image 20250212063611_689.png",
     "Daily Notes/2025-02-13",
     "Daily Notes/2025-02-12/system and flow for interface.canvas",
     "Daily Notes/2025-02-12/Untitled.canvas",
