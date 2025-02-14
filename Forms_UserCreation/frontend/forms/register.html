@@ -30,19 +30,68 @@
 
             <button type="submit">Register</button>
         </form>
+
+        <h2>Registered Users</h2>
+        <button onclick="fetchUsers()">Refresh Users</button>
+        <table border="1" id="usersTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>User Type</th>
+                    <th>Created At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Users will be inserted here dynamically -->
+            </tbody>
+        </table>
     </div>
+
     <script>
         document.getElementById("registerForm").onsubmit = async function(e) {
             e.preventDefault();
             let formData = new FormData(e.target);
-            let response = await fetch("/api/submit_user", {
+            let jsonData = Object.fromEntries(formData);
+
+            if (jsonData.password !== jsonData.confirm_password) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            let response = await fetch("http://127.0.0.1:5000/api/submit_user", {
                 method: "POST",
-                body: JSON.stringify(Object.fromEntries(formData)),
+                body: JSON.stringify(jsonData),
                 headers: { "Content-Type": "application/json" }
             });
+
             let result = await response.json();
             alert(result.message);
+            fetchUsers();  // Refresh the user list after registration
         };
+
+        async function fetchUsers() {
+            let response = await fetch("http://127.0.0.1:5001/api/get_users");
+            let data = await response.json();
+
+            let tableBody = document.getElementById("usersTable").querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            data.users.forEach(user => {
+                let row = `<tr>
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.user_type}</td>
+                    <td>${user.created_at}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Load users when the page opens
+        fetchUsers();
     </script>
 </body>
 </html>
