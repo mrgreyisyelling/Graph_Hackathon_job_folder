@@ -7,6 +7,53 @@ CORS(app)
 
 DB_PATH = "database/jobs/jobs.db"
 
+@app.route("/api/social_unit_impact", methods=["GET"])
+def social_unit_impact():
+    """
+    Simulates adding a unit of labor to social support (e.g., childcare)
+    and calculates how many workers would become available.
+    """
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+
+        # Step 1: Get workers in "Available with Requirements" category
+        cursor.execute("""
+            SELECT DISTINCT users.id, users.name, worker_needs.need
+            FROM users
+            JOIN worker_needs ON users.id = worker_needs.user_id
+            JOIN user_skills ON users.id = user_skills.user_id
+            WHERE users.id IN (SELECT DISTINCT user_id FROM worker_availability)
+        """)
+        workers_with_needs = cursor.fetchall()  # [(id, name, need), ...]
+
+        # Step 2: Group workers by type of need
+        need_counts = {}
+        workers_per_need = {}
+        for worker_id, name, need in workers_with_needs:
+            if need not in need_counts:
+                need_counts[need] = 0
+                workers_per_need[need] = []
+            need_counts[need] += 1
+            workers_per_need[need].append({"id": worker_id, "name": name})
+
+        # Step 3: Simulate the effect of adding one unit of labor to each social unit need
+        impact_analysis = {}
+        for need, count in need_counts.items():
+            freed_workers = min(count, 1)  # 1 unit of labor can clear at most 1 worker's need
+            impact_analysis[need] = {
+                "workers_unlocked": freed_workers,
+                "remaining_workers": count - freed_workers,
+                "affected_workers": workers_per_need[need]
+            }
+
+        conn.close()
+
+        return jsonify({"social_unit_impact": impact_analysis}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @app.route("/api/filter_workers", methods=["GET"])
 def filter_workers():
     try:

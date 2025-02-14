@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Unit Impact</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Simulating Social Unit Labor Injection</h2>
+        <button onclick="fetchSocialUnitImpact()">Calculate Impact</button>
+
+        <h2>Impact Results</h2>
+        <table border="1" id="impactTable">
+            <thead>
+                <tr>
+                    <th>Need</th>
+                    <th>Workers Unlocked</th>
+                    <th>Remaining Workers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Impact results will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        async function fetchSocialUnitImpact() {
+            let response = await fetch("http://127.0.0.1:5007/api/social_unit_impact");
+            let data = await response.json();
+            console.log("✅ API Response:", data);
+
+            let tableBody = document.getElementById("impactTable").querySelector("tbody");
+            tableBody.innerHTML = "";
+
+            for (let need in data.social_unit_impact) {
+                let entry = data.social_unit_impact[need];
+                let row = `<tr>
+                    <td>${need}</td>
+                    <td>${entry.workers_unlocked}</td>
+                    <td>${entry.remaining_workers}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            }
+        }
+    </script>
+</body>
+</html>
