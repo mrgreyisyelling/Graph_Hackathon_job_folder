@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <label>Full Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>User Type</label>
+            <select name="user_type">
+                <option value="parent">Parent</option>
+                <option value="provider">Childcare Provider</option>
+                <option value="job_seeker">Job Seeker</option>
+                <option value="employer">Employer</option>
+            </select>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("registerForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let response = await fetch("/api/submit_user", {
+                method: "POST",
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: { "Content-Type": "application/json" }
+            });
+            let result = await response.json();
+            alert(result.message);
+        };
+    </script>
+</body>
+</html>
