@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Relationship</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create a Relationship</h2>
+        <form id="relationshipForm">
+            <label>User A ID</label>
+            <input type="text" name="user_a_id" required>
+
+            <label>User B ID</label>
+            <input type="text" name="user_b_id" required>
+
+            <label>Relationship Type</label>
+            <select name="relationship_type">
+                <option value="KNOWS">Knows</option>
+                <option value="WORKS_WITH">Works With</option>
+                <option value="BELONGS_TO">Belongs To</option>
+                <option value="HIRED_BY">Hired By</option>
+            </select>
+
+            <button type="submit">Create Relationship</button>
+        </form>
+
+        <h2>Existing Relationships</h2>
+        <button onclick="fetchRelationships()">Refresh Relationships</button>
+        <table border="1" id="relationshipsTable">
+            <thead>
+                <tr>
+                    <th>User A</th>
+                    <th>Relationship</th>
+                    <th>User B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Relationships will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("relationshipForm").onsubmit = async function(e) {
+            e.preventDefault();
+            let formData = new FormData(e.target);
+            let jsonData = Object.fromEntries(formData);
+
+            let response = await fetch("http://127.0.0.1:5002/api/create_relationship", {
+                method: "POST",
+                body: JSON.stringify(jsonData),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            let result = await response.json();
+            alert(result.message);
+            fetchRelationships();  // Refresh the relationships list
+        };
+
+        async function fetchRelationships() {
+            let response = await fetch("http://127.0.0.1:5002/api/get_relationships");
+            let data = await response.json();
+
+            let tableBody = document.getElementById("relationshipsTable").querySelector("tbody");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            data.relationships.forEach(rel => {
+                let row = `<tr>
+                    <td>${rel.user_a}</td>
+                    <td>${rel.type}</td>
+                    <td>${rel.user_b}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        fetchRelationships(); // Load relationships on page load
+    </script>
+</body>
+</html>
