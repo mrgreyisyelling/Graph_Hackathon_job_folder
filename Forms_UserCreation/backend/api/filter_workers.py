@@ -10,8 +10,11 @@ DB_PATH = "database/jobs/jobs.db"
 @app.route("/api/social_unit_impact", methods=["GET"])
 def social_unit_impact():
     """
-    Simulates adding a unit of labor to social support (e.g., childcare)
-    and calculates how many workers would become available.
+    Simulates adding social support (e.g., childcare, transportation)
+    and calculates:
+    - How many labor units are needed to unlock all workers
+    - The total number of workers unlocked
+    - The ratio of workers unlocked per unit of labor
     """
     try:
         conn = sqlite3.connect(DB_PATH)
@@ -27,29 +30,51 @@ def social_unit_impact():
         """)
         workers_with_needs = cursor.fetchall()  # [(id, name, need), ...]
 
-        # Step 2: Group workers by type of need
-        need_counts = {}
-        workers_per_need = {}
-        for worker_id, name, need in workers_with_needs:
-            if need not in need_counts:
-                need_counts[need] = 0
-                workers_per_need[need] = []
-            need_counts[need] += 1
-            workers_per_need[need].append({"id": worker_id, "name": name})
+        # Step 2: Group workers by type of need (ignoring flexible hours & remote work)
+        tracked_needs = ["Childcare", "Transportation"]
+        need_counts = {need: 0 for need in tracked_needs}
+        workers_per_need = {need: [] for need in tracked_needs}
 
-        # Step 3: Simulate the effect of adding one unit of labor to each social unit need
+        for worker_id, name, need in workers_with_needs:
+            if need in tracked_needs:
+                need_counts[need] += 1
+                workers_per_need[need].append({"id": worker_id, "name": name})
+
+        # Step 3: Define labor efficiency (how many workers can be freed per unit)
+        labor_efficiency = {
+            "Childcare": 6,
+            "Transportation": 4
+        }
+
+        # Step 4: Calculate how many labor units are needed and total workers unlocked
+        labor_units_needed = 0
+        total_workers_unlocked = 0
         impact_analysis = {}
+
         for need, count in need_counts.items():
-            freed_workers = min(count, 1)  # 1 unit of labor can clear at most 1 worker's need
-            impact_analysis[need] = {
-                "workers_unlocked": freed_workers,
-                "remaining_workers": count - freed_workers,
-                "affected_workers": workers_per_need[need]
-            }
+            if count > 0:
+                units_required = -(-count // labor_efficiency[need])  # Ceiling division
+                workers_freed = min(count, units_required * labor_efficiency[need])  # Cap to actual count
+                labor_units_needed += units_required
+                total_workers_unlocked += workers_freed
+
+                impact_analysis[need] = {
+                    "total_workers": count,
+                    "labor_units_required": units_required,
+                    "workers_freed": workers_per_need[need][:workers_freed]  # Show which workers are freed
+                }
+
+        # Step 5: Compute ratio of workers unlocked per labor unit
+        unlock_ratio = round(total_workers_unlocked / labor_units_needed, 2) if labor_units_needed > 0 else 0
 
         conn.close()
 
-        return jsonify({"social_unit_impact": impact_analysis}), 200
+        return jsonify({
+            "social_unit_impact": impact_analysis,
+            "total_labor_units_needed": labor_units_needed,
+            "total_workers_unlocked": total_workers_unlocked,
+            "unlock_ratio": unlock_ratio
+        }), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500

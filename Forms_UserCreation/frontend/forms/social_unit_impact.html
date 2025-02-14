@@ -10,12 +10,17 @@
         <button onclick="fetchSocialUnitImpact()">Calculate Impact</button>
 
         <h2>Impact Results</h2>
+        <p><strong>Total Labor Units Needed: <span id="totalLaborUnits">-</span></strong></p>
+        <p><strong>Total Workers Unlocked: <span id="totalWorkersUnlocked">-</span></strong></p>
+        <p><strong>Workers Unlocked per Labor Unit: <span id="unlockRatio">-</span></strong></p>
+        
         <table border="1" id="impactTable">
             <thead>
                 <tr>
                     <th>Need</th>
-                    <th>Workers Unlocked</th>
-                    <th>Remaining Workers</th>
+                    <th>Total Workers Affected</th>
+                    <th>Labor Units Required</th>
+                    <th>Workers Freed</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,15 +35,23 @@
             let data = await response.json();
             console.log("✅ API Response:", data);
 
+            // Update total labor units needed, workers unlocked, and unlock ratio
+            document.getElementById("totalLaborUnits").innerText = data.total_labor_units_needed;
+            document.getElementById("totalWorkersUnlocked").innerText = data.total_workers_unlocked;
+            document.getElementById("unlockRatio").innerText = data.unlock_ratio;
+
             let tableBody = document.getElementById("impactTable").querySelector("tbody");
             tableBody.innerHTML = "";
 
             for (let need in data.social_unit_impact) {
                 let entry = data.social_unit_impact[need];
+                let freedWorkers = entry.workers_freed.map(worker => worker.name).join(", ");
+
                 let row = `<tr>
                     <td>${need}</td>
-                    <td>${entry.workers_unlocked}</td>
-                    <td>${entry.remaining_workers}</td>
+                    <td>${entry.total_workers}</td>
+                    <td>${entry.labor_units_required}</td>
+                    <td>${freedWorkers}</td>
                 </tr>`;
                 tableBody.innerHTML += row;
             }
