@@ -1,0 +1,10 @@
+{
+    "id": "knowledge-graph-plugin",
+    "name": "Knowledge Graph Plugin",
+    "version": "1.0.0",
+    "minAppVersion": "0.12.0",
+    "description": "Extracts triples from YAML frontmatter.",
+    "author": "Your Name",
+    "authorUrl": "https://your-website.com",
+    "isDesktopOnly": false
+  }

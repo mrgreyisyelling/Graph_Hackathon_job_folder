@@ -26,6 +26,73 @@ Let's start building the **Obsidian plugin** to extract triples from YAML metada
 ### **Initial Implementation**
 
 I'll draft the basic `main.ts` to load the plugin and process triples from YAML.
+```typescript
+
+import { App, Plugin, PluginSettingTab, Setting, TFile } from "obsidian";
+import { parseTriples } from "./parser";
+import { KnowledgeGraphStore } from "./store";
+import { TripleView } from "./view";
+
+export default class KnowledgeGraphPlugin extends Plugin {
+    store: KnowledgeGraphStore;
+
+    async onload() {
+        console.log("Loading Knowledge Graph Plugin");
+        this.store = new KnowledgeGraphStore();
+        this.addSettingTab(new KnowledgeGraphSettingsTab(this.app, this));
+        
+        this.registerEvent(this.app.vault.on("modify", this.processFile.bind(this)));
+        this.registerView("triple-view", (leaf) => new TripleView(leaf, this.store));
+
+        await this.loadKnowledgeGraph();
+    }
+
+    async processFile(file: TFile) {
+        if (file.extension === "md") {
+            const content = await this.app.vault.read(file);
+            const triples = parseTriples(content);
+            this.store.updateTriples(file.path, triples);
+        }
+    }
+
+    async loadKnowledgeGraph() {
+        const files = this.app.vault.getMarkdownFiles();
+        for (const file of files) {
+            await this.processFile(file);
+        }
+    }
+
+    onunload() {
+        console.log("Unloading Knowledge Graph Plugin");
+    }
+}
+
+class KnowledgeGraphSettingsTab extends PluginSettingTab {
+    plugin: KnowledgeGraphPlugin;
+
+    constructor(app: App, plugin: KnowledgeGraphPlugin) {
+        super(app, plugin);
+        this.plugin = plugin;
+    }
+
+    display() {
+        const { containerEl } = this;
+        containerEl.empty();
+
+        new Setting(containerEl)
+            .setName("Knowledge Graph Settings")
+            .setDesc("Configure how the plugin processes knowledge graphs.")
+            .addToggle(toggle => toggle
+                .setValue(true)
+                .onChange(async (value) => {
+                    console.log("Settings updated: ", value);
+                }));
+    }
+}
+
+```
+
+``
 
 This is the **core plugin structure** that:
 

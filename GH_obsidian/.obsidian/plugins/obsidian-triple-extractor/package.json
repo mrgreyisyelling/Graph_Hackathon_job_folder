@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-triple-extractor",
+  "version": "1.0.0",
+  "description": "Extracts triples from YAML frontmatter in Obsidian.",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "obsidian": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

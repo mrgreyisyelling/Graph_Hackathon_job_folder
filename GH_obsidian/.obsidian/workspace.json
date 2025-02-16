@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216093915.md",
+                "file": "Daily Notes/2025-02-16/2025-02-16.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graph Hackathon - Knowledge Graph - 20250216093915"
+              "title": "2025-02-16"
             }
           }
         ]
@@ -171,139 +171,40 @@
       "templater-obsidian:Templater": false
     }
   },
-  "floating": {
-    "id": "3183d71c13a786e1",
-    "type": "floating",
-    "children": [
-      {
-        "id": "3d8c901db6e885dd",
-        "type": "window",
-        "children": [
-          {
-            "id": "921a63485628296c",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "c0bd10e4446f3643",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 14.52.06.excalidraw.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 14.52.06.excalidraw"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 1779,
-        "y": 512,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      },
-      {
-        "id": "1ce772660f712350",
-        "type": "window",
-        "children": [
-          {
-            "id": "3210a3b873c84bf0",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "dc6485612a06f62f",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Daily Notes/2025-02-16/2025-02-16.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "2025-02-16"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 3859,
-        "y": 701,
-        "width": 1417,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      },
-      {
-        "id": "1ecced59cc2d922d",
-        "type": "window",
-        "children": [
-          {
-            "id": "99a1daff4c385384",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "6800474eed1a1cf0",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "Excalidraw/Drawing 2025-02-16 08.50.33.excalidraw.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "Drawing 2025-02-16 08.50.33.excalidraw"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 2214,
-        "y": 579,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "7508be70a8802b90",
   "lastOpenFiles": [
-    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 202502160926090.md",
-    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216093915.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216112745.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216112432.md",
     "Daily Notes/2025-02-16/2025-02-16.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216112244.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216111820.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216111319.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216111232.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216111227.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216111012.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216110953.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216110937.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216110223.md",
+    "Excalidraw/Drawing 2025-02-16 08.50.33.excalidraw.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216104300.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216104247.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216103751.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216103624.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216101912.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216095122.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216095116.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216093915.md",
+    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 202502160926090.md",
     "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216090323.md",
     "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 17.54.47.excalidraw.md",
     "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 14.52.06.excalidraw.md",
-    "Excalidraw/Drawing 2025-02-16 08.50.33.excalidraw.md",
     "Excalidraw/Graph Hackathon - Knowledge Graph - 20250216090323 2025-02-16 09.05.23.excalidraw.md",
-    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216085603.md",
-    "Daily Notes/2025-02-16/Graph Hackathon - Knowledge Graph - 20250216085009.md",
-    "Excalidraw/Michael Penta - 20250216062012 2025-02-16 06.20.19.excalidraw.excalidraw.md",
     "Excalidraw/Michael Penta - 20250216062012 2025-02-16 06.20.19.excalidraw.excalidraw",
-    "Daily Notes/2025-02-15/Graph Hackathon - Knowledge Graph - 20250215010849.md",
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 16.08.39.excalidraw.md",
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 13.47.11.excalidraw.md",
-    "templates/daily_note_template.md",
     "attachements/Pasted image 20250211040802.png",
     "attachements",
     "templates",
     "Daily Notes/2025-02-16",
     "attachements/Pasted Image 20250215182633_851.png",
-    "Excalidraw/2025-02-14 2025-02-14 09.08.32.excalidraw.md",
-    "Excalidraw/20250213103133 2025-02-13 10.37.49.excalidraw.md",
-    "Excalidraw/20250213080644 2025-02-13 08.07.10.excalidraw.md",
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 13.24.12.excalidraw.md",
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 14.35.44.excalidraw.md",
-    "Daily Notes/2025-02-15/2025-02-15.md",
-    "Excalidraw/Drawing 2025-02-15 12.58.14.excalidraw.md",
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 14.36.04.excalidraw.md",
-    "Daily Notes/2025-02-14/Graph Hackathon - Knowledge Graph - 20250214040532.md",
     "attachements/Pasted image 20250215144609.png",
     "attachements/Pasted image 20250215144559.png",
     "attachements/Pasted image 20250215144550.png",
@@ -311,8 +212,6 @@
     "attachements/Pasted Image 20250215141157_341.png",
     "attachements/Pasted Image 20250215141114_081.png",
     "attachements/Pasted Image 20250215132503_888.png",
-    "Excalidraw/20250212102709 2025-02-12 11.22.22.excalidraw.md",
-    "Excalidraw/20250212113302 2025-02-12 11.33.11.excalidraw.md",
     "Daily Notes/2025-02-15",
     "attachements/Pasted image 20250214160616.png",
     "Daily Notes/2025-02-14",
