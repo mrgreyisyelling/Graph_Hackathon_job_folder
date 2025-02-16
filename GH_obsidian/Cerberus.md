@@ -1,5 +1,0 @@
----
-entity: "Cerberus"
-attributes: []
----
-

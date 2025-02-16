@@ -1,0 +1,26 @@
+[
+  {
+    "entity": "Hell Gate",
+    "attribute": "Connected to",
+    "value": "Basement",
+    "version": "live_version"
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "Danger Level",
+    "value": "High",
+    "version": "live_version"
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "Has Guardian",
+    "value": "Cerberus",
+    "version": "live_version"
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "Category",
+    "value": "Portal",
+    "version": "live_version"
+  }
+]

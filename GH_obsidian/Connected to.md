@@ -1,5 +1,0 @@
----
-entity: "Connected to"
-attributes: []
----
-

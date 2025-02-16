@@ -1,5 +1,0 @@
----
-entity: "Has Guardian"
-attributes: []
----
-

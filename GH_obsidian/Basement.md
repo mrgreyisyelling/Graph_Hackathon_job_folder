@@ -1,5 +1,0 @@
----
-entity: "Basement"
-attributes: []
----
-

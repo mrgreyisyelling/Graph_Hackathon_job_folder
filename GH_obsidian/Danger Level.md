@@ -1,5 +1,0 @@
----
-entity: "Danger Level"
-attributes: []
----
-

@@ -1,7 +1,7 @@
 import { load } from "js-yaml";
 import { Triple } from "./types";  // ✅ Import the Triple interface
 
-export function parseTriples(content: string): Triple[] {
+export function parseTriples(content: string) {
     console.log("🛠 Parsing Content:", content);
     try {
         const yamlMatch = content.match(/^---\n([\s\S]+?)\n---/);
@@ -13,23 +13,32 @@ export function parseTriples(content: string): Triple[] {
         const yamlData = load(yamlMatch[1]) as any;
         console.log("📂 Parsed YAML Data:", yamlData);
 
-        if (!yamlData.entity || !yamlData.live_version) {
-            console.warn("⚠️ Missing entity or live_version in YAML.");
+        if (!yamlData.entity) {
+            console.warn("⚠️ Missing entity in YAML.");
             return [];
         }
 
         let triples: Triple[] = [];
-        for (const [attribute, value] of Object.entries(yamlData.live_version)) {
-            if (typeof value === "string") { 
-                triples.push({
-                    entity: yamlData.entity,
-                    attribute,
-                    value,
-                    version: "live_version",  // ✅ Always include a `version`
-                });
-            } else {
-                console.warn(`⚠️ Skipping attribute ${attribute} because it's not a string.`);
+
+        // ✅ If `live_version` exists, extract triples from there
+        if (yamlData.live_version) {
+            for (const [attribute, value] of Object.entries(yamlData.live_version)) {
+                if (typeof value === "string") {
+                    triples.push({ entity: yamlData.entity, attribute, value, version: "live_version" });
+                } else {
+                    console.warn(`⚠️ Skipping attribute ${attribute} (not a string).`);
+                }
             }
+        }
+
+        // ✅ If `attributes` exists (fallback), extract triples from there
+        if (yamlData.attributes && Array.isArray(yamlData.attributes)) {
+            yamlData.attributes.forEach((attr: string) => {
+                const [attribute, value] = attr.split(":").map(s => s.trim());
+                if (attribute && value) {
+                    triples.push({ entity: yamlData.entity, attribute, value, version: "live_version" });
+                }
+            });
         }
 
         console.log("✅ Extracted Triples:", triples);
