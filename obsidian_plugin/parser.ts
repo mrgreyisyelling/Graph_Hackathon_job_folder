@@ -1,7 +1,7 @@
 import { load } from "js-yaml";
 import { Triple } from "./types";  // ✅ Import the Triple interface
 
-export function parseTriples(content: string) {
+export function parseTriples(content: string): Triple[] {
     console.log("🛠 Parsing Content:", content);
     try {
         const yamlMatch = content.match(/^---\n([\s\S]+?)\n---/);
@@ -18,10 +18,15 @@ export function parseTriples(content: string) {
             return [];
         }
 
-        let triples = [];
+        let triples: Triple[] = [];
         for (const [attribute, value] of Object.entries(yamlData.live_version)) {
             if (typeof value === "string") { 
-                triples.push({ entity: yamlData.entity, attribute, value });
+                triples.push({
+                    entity: yamlData.entity,
+                    attribute,
+                    value,
+                    version: "live_version",  // ✅ Always include a `version`
+                });
             } else {
                 console.warn(`⚠️ Skipping attribute ${attribute} because it's not a string.`);
             }
