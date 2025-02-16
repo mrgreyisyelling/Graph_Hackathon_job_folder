@@ -3,7 +3,7 @@ import { load } from "js-yaml";
 /**
  * Parses YAML frontmatter to extract triples (Entity, Attribute, Value).
  */
-export function parseTriples(content: string): { entity: string; attribute: string; value: string, isEntity: boolean }[] {
+export function parseTriples(content: string): { entity: string; attribute: string; value: string }[] {
     const yamlMatch = content.match(/^---\n([\s\S]+?)\n---/);
     if (!yamlMatch) return [];
 
@@ -15,16 +15,12 @@ export function parseTriples(content: string): { entity: string; attribute: stri
         return attributes.map((attr: string) => {
             const [attribute, value] = attr.split(":").map((s) => s.trim());
 
-            // ✅ Ensure attributes are also treated as entities
-            const isAttributeEntity = true;
-
             // ✅ Ensure values are standardized (remove [[ ]])
-            const isValueEntity = true;
             const cleanValue = value.replace(/^\[\[/, "").replace(/\]\]$/, ""); // Removes [[ ]]
 
             return [
-                { entity, attribute: "has_attribute", value: attribute, isEntity: isAttributeEntity },
-                { entity, attribute, value: cleanValue, isEntity: isValueEntity }
+                { entity, attribute: "has_attribute", value: attribute },
+                { entity, attribute, value: cleanValue }
             ];
         }).flat();
     } catch (error) {

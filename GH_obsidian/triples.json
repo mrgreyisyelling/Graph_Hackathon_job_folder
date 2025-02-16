@@ -2,50 +2,42 @@
   {
     "entity": "Hell Gate",
     "attribute": "has_attribute",
-    "value": "Connected to",
-    "isEntity": true
+    "value": "Connected to"
   },
   {
     "entity": "Hell Gate",
     "attribute": "Connected to",
-    "value": "Basement",
-    "isEntity": true
+    "value": "Basement"
   },
   {
     "entity": "Hell Gate",
     "attribute": "has_attribute",
-    "value": "Danger Level",
-    "isEntity": true
+    "value": "Danger Level"
   },
   {
     "entity": "Hell Gate",
     "attribute": "Danger Level",
-    "value": "High",
-    "isEntity": true
+    "value": "High"
   },
   {
     "entity": "Hell Gate",
     "attribute": "has_attribute",
-    "value": "Has Guardian",
-    "isEntity": true
+    "value": "Has Guardian"
   },
   {
     "entity": "Hell Gate",
     "attribute": "Has Guardian",
-    "value": "Cerberus",
-    "isEntity": true
+    "value": "Cerberus"
   },
   {
     "entity": "Hell Gate",
     "attribute": "has_attribute",
-    "value": "Category",
-    "isEntity": true
+    "value": "Category"
   },
   {
     "entity": "Hell Gate",
     "attribute": "Category",
-    "value": "Portal",
-    "isEntity": true
+    "value": "Portal"
   },
   {
     "entity": "Connected to",
