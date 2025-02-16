@@ -1,9 +1,7 @@
 import { load } from "js-yaml";
+import { Triple } from "./types";  // ✅ Import the Triple interface
 
-/**
- * Parses YAML frontmatter to extract triples (Entity, Attribute, Value).
- */
-export function parseTriples(content: string): { entity: string; attribute: string; value: string }[] {
+export function parseTriples(content: string): Triple[] {
     const yamlMatch = content.match(/^---\n([\s\S]+?)\n---/);
     if (!yamlMatch) return [];
 
@@ -14,13 +12,11 @@ export function parseTriples(content: string): { entity: string; attribute: stri
 
         return attributes.map((attr: string) => {
             const [attribute, value] = attr.split(":").map((s) => s.trim());
-
-            // ✅ Ensure values are standardized (remove [[ ]])
             const cleanValue = value.replace(/^\[\[/, "").replace(/\]\]$/, ""); // Removes [[ ]]
 
             return [
-                { entity, attribute: "has_attribute", value: attribute },
-                { entity, attribute, value: cleanValue }
+                { entity, attribute: "has_attribute", value: attribute, version: "master_version" },
+                { entity, attribute, value: cleanValue, version: "live_version" }
             ];
         }).flat();
     } catch (error) {

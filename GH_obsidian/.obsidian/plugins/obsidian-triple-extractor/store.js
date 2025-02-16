@@ -1,18 +1,1 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.KnowledgeGraphStore = void 0;
-class KnowledgeGraphStore {
-    constructor() {
-        this.triples = new Map();
-    }
-    updateTriples(filePath, newTriples) {
-        this.triples.set(filePath, newTriples);
-    }
-    getTriples() {
-        return Array.from(this.triples.values()).flat();
-    }
-    clear() {
-        this.triples.clear();
-    }
-}
-exports.KnowledgeGraphStore = KnowledgeGraphStore;
+(()=>{"use strict";var e={};(()=>{var r=e;Object.defineProperty(r,"__esModule",{value:!0}),r.KnowledgeGraphStore=void 0,r.KnowledgeGraphStore=class{constructor(){this.triples=new Map}updateTriples(e,r){this.triples.set(e,r)}getTriples(){return Array.from(this.triples.values()).flat()}clear(){this.triples.clear()}}})();var r=exports;for(var t in e)r[t]=e[t];e.__esModule&&Object.defineProperty(r,"__esModule",{value:!0})})();

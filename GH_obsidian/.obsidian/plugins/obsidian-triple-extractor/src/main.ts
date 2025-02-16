@@ -1,8 +1,11 @@
 import { TripleView } from "./view"; 
-import { Plugin, TFile, normalizePath } from "obsidian";
+import { Plugin, Notice, TFile, normalizePath } from "obsidian";
 import { load } from "js-yaml"; // ✅ Use js-yaml instead
 import { parseTriples } from "./parser";
 import { KnowledgeGraphStore } from "./store";
+import { mergeKnowledgeGraphs } from "./merge";
+import { Triple } from "./types";  // ✅ Import the Triple interface
+  // ✅ Import merge logic
 
 export default class KnowledgeGraphPlugin extends Plugin {
     private store: KnowledgeGraphStore = new KnowledgeGraphStore();
@@ -11,13 +14,18 @@ export default class KnowledgeGraphPlugin extends Plugin {
     async onload() {
         console.log("Loading Knowledge Graph Plugin");
 
-        this.registerEvent(this.app.vault.on("rename", async (file) => {
-            if (file instanceof TFile) {
-                await this.processFile(file);
-            }
-        }));
+        this.addCommand({
+            id: "merge-knowledge-graph",
+            name: "Merge External Knowledge Graph",
+            callback: async () => {
+                const primaryPath = "triples.json";  
+                const secondaryPath = "merged_triples.json";  
+                const outputPath = "triples.json";  
 
-        await this.loadKnowledgeGraph();
+                await mergeKnowledgeGraphs(this.app, primaryPath, secondaryPath, outputPath);
+                new Notice("Knowledge Graph merged successfully.");
+            },
+        });
     }
 
     async processFile(file: TFile) {
@@ -25,18 +33,28 @@ export default class KnowledgeGraphPlugin extends Plugin {
             const content = await this.app.vault.read(file);
             const triples = parseTriples(content);
     
-            // ✅ Store relationships
-            this.store.updateTriples(file.path, triples);
-            console.log("Extracted Triples:", triples);
+            const masterData: Record<string, string> = {};
+            const liveData: Record<string, string> = {};
+            
     
-            // ✅ Create placeholder notes for all detected entities
-            await this.createEntities(triples);
+            triples.forEach(triple => {
+                if (triple.version === "master_version") {
+                    masterData[triple.attribute] = triple.value;
+                } else if (triple.version === "live_version") {
+                    liveData[triple.attribute] = triple.value;
+                }
+            });
     
-            // ✅ Add links to extracted entities in the note
-            await this.insertEntityLinks(file, content, triples);
+            const updatedYaml = `---
+            entity: "${triples[0].entity}"
+            master_version:
+            ${Object.entries(masterData).map(([attr, val]) => `  ${attr}: "${val}"`).join("\n")}
+            live_version:
+            ${Object.entries(liveData).map(([attr, val]) => `  ${attr}: "${val}"`).join("\n")}
+            ---
+            `;
     
-            // ✅ Write triples to file
-            await this.saveTriplesToFile();
+            await this.app.vault.modify(file, updatedYaml);
         }
     }
 
@@ -153,3 +171,4 @@ export default class KnowledgeGraphPlugin extends Plugin {
         console.log("Unloading Knowledge Graph Plugin");
     }
 }
+
