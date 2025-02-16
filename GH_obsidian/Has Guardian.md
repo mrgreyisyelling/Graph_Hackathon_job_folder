@@ -1,0 +1,5 @@
+---
+entity: "Has Guardian"
+attributes: []
+---
+

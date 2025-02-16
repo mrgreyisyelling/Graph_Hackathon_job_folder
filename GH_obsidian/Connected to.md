@@ -1,0 +1,5 @@
+---
+entity: "Connected to"
+attributes: []
+---
+
