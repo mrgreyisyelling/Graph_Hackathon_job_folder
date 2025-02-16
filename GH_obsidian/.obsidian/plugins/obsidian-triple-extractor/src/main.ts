@@ -42,11 +42,16 @@ export default class KnowledgeGraphPlugin extends Plugin {
 
     async saveTriplesToFile() {
         const path = normalizePath(this.outputFile);
-        const storedTriples = this.store.getTriples();
-
+        let storedTriples = this.store.getTriples();
+    
+        // ✅ Remove duplicate triples
+        const uniqueTriples = Array.from(
+            new Map(storedTriples.map(triple => [JSON.stringify(triple), triple])).values()
+        );
+        
         // ✅ Convert to JSON
-        const jsonData = JSON.stringify(storedTriples, null, 2);
-
+        const jsonData = JSON.stringify(uniqueTriples, null, 2);
+    
         // ✅ Write to a local file in Obsidian
         try {
             let file = this.app.vault.getAbstractFileByPath(path);
@@ -60,6 +65,7 @@ export default class KnowledgeGraphPlugin extends Plugin {
             console.error("Failed to save triples:", err);
         }
     }
+    
 
     async loadKnowledgeGraph() {
         const files = this.app.vault.getMarkdownFiles();
@@ -101,14 +107,33 @@ export default class KnowledgeGraphPlugin extends Plugin {
             const entityName = triple.value; // Ensuring values become entities
             const attributeName = triple.attribute; // Ensuring attributes become entities
     
-            // ✅ Create notes for entities (values)
+            // ✅ Create notes for entities (values) & ensure they exist as triples
             await this.ensureEntityNote(entityName);
+            await this.addEntityTriple(entityName);
     
-            // ✅ Create notes for attributes
+            // ✅ Create notes for attributes & ensure they exist as triples
             await this.ensureEntityNote(attributeName);
+            await this.addEntityTriple(attributeName);
+        }
+    }
+
+    async addEntityTriple(entityName: string) {
+        const selfTriple = { entity: entityName, attribute: "is_entity", value: entityName };
+        
+        // ✅ Check if it already exists to avoid duplicates
+        const existingTriples = this.store.getTriples();
+        const alreadyExists = existingTriples.some(
+            (t) => t.entity === entityName && t.attribute === "is_entity"
+        );
+    
+        if (!alreadyExists) {
+            console.log(`Adding self-triple for ${entityName}`);
+            this.store.updateTriples(entityName, [selfTriple]);
+            await this.saveTriplesToFile();
         }
     }
     
+
     /**
      * Ensures a note exists for a given entity or attribute.
      * If it doesn’t exist, creates it with a default YAML frontmatter.

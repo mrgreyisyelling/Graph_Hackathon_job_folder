@@ -1,122 +1,95 @@
 [
   {
     "entity": "Hell Gate",
+    "attribute": "has_attribute",
+    "value": "Connected to",
+    "isEntity": true
+  },
+  {
+    "entity": "Hell Gate",
     "attribute": "Connected to",
+    "value": "Basement",
+    "isEntity": true
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "has_attribute",
+    "value": "Danger Level",
+    "isEntity": true
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "Danger Level",
+    "value": "High",
+    "isEntity": true
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "has_attribute",
+    "value": "Has Guardian",
+    "isEntity": true
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "Has Guardian",
+    "value": "Cerberus",
+    "isEntity": true
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "has_attribute",
+    "value": "Category",
+    "isEntity": true
+  },
+  {
+    "entity": "Hell Gate",
+    "attribute": "Category",
+    "value": "Portal",
+    "isEntity": true
+  },
+  {
+    "entity": "Connected to",
+    "attribute": "is_entity",
+    "value": "Connected to"
+  },
+  {
+    "entity": "has_attribute",
+    "attribute": "is_entity",
+    "value": "has_attribute"
+  },
+  {
+    "entity": "Basement",
+    "attribute": "is_entity",
     "value": "Basement"
   },
   {
-    "entity": "Hell Gate",
-    "attribute": "Danger Level",
+    "entity": "Danger Level",
+    "attribute": "is_entity",
+    "value": "Danger Level"
+  },
+  {
+    "entity": "High",
+    "attribute": "is_entity",
     "value": "High"
   },
   {
-    "entity": "Hell Gate",
-    "attribute": "Has Guardian",
+    "entity": "Has Guardian",
+    "attribute": "is_entity",
+    "value": "Has Guardian"
+  },
+  {
+    "entity": "Cerberus",
+    "attribute": "is_entity",
     "value": "Cerberus"
   },
   {
-    "entity": "Hell Gate",
-    "attribute": "Category",
-    "value": "Portal"
+    "entity": "Category",
+    "attribute": "is_entity",
+    "value": "Category"
   },
   {
-    "entity": "Hell Gate",
-    "attribute": "Connected to",
-    "value": "Basement"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Danger Level",
-    "value": "High"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Has Guardian",
-    "value": "Cerberus"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Category",
-    "value": "Portal"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Connected to",
-    "value": "[[Basement]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Danger Level",
-    "value": "[[High]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Has Guardian",
-    "value": "[[Cerberus]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Category",
-    "value": "[[Portal]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Connected to",
-    "value": "[[Basement]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Danger Level",
-    "value": "[[High]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Has Guardian",
-    "value": "[[Cerberus]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Category",
-    "value": "[[Portal]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Connected to",
-    "value": "[[Basement]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Danger Level",
-    "value": "High"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Connected to",
-    "value": "[[Basement]]"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Danger Level",
-    "value": "High"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Connected to",
-    "value": "Basement"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Danger Level",
-    "value": "High"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Has Guardian",
-    "value": "Cerberus"
-  },
-  {
-    "entity": "Hell Gate",
-    "attribute": "Category",
+    "entity": "Portal",
+    "attribute": "is_entity",
     "value": "Portal"
   }
 ]

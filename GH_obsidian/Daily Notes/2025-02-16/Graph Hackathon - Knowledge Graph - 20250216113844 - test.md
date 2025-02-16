@@ -149,3 +149,10 @@ export default class KnowledgeGraphPlugin extends Plugin {
 [[[[Basement]]]]
 [[Danger Level]]
 [[High]]
+
+## Related Entities
+[[has_attribute]]
+[[Connected to]]
+[[Basement]]
+[[Danger Level]]
+[[High]]
