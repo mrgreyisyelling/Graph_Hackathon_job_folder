@@ -1,26 +1,36 @@
 import { load } from "js-yaml";
 import { Triple } from "./types";  // ✅ Import the Triple interface
 
-export function parseTriples(content: string): Triple[] {
-    const yamlMatch = content.match(/^---\n([\s\S]+?)\n---/);
-    if (!yamlMatch) return [];
-
+export function parseTriples(content: string) {
+    console.log("🛠 Parsing Content:", content);
     try {
+        const yamlMatch = content.match(/^---\n([\s\S]+?)\n---/);
+        if (!yamlMatch) {
+            console.warn("⚠️ No YAML block found!");
+            return [];
+        }
+
         const yamlData = load(yamlMatch[1]) as any;
-        const entity = yamlData.entity || "Unknown Entity";
-        const attributes = yamlData.attributes || [];
+        console.log("📂 Parsed YAML Data:", yamlData);
 
-        return attributes.map((attr: string) => {
-            const [attribute, value] = attr.split(":").map((s) => s.trim());
-            const cleanValue = value.replace(/^\[\[/, "").replace(/\]\]$/, ""); // Removes [[ ]]
+        if (!yamlData.entity || !yamlData.live_version) {
+            console.warn("⚠️ Missing entity or live_version in YAML.");
+            return [];
+        }
 
-            return [
-                { entity, attribute: "has_attribute", value: attribute, version: "master_version" },
-                { entity, attribute, value: cleanValue, version: "live_version" }
-            ];
-        }).flat();
+        let triples = [];
+        for (const [attribute, value] of Object.entries(yamlData.live_version)) {
+            if (typeof value === "string") { 
+                triples.push({ entity: yamlData.entity, attribute, value });
+            } else {
+                console.warn(`⚠️ Skipping attribute ${attribute} because it's not a string.`);
+            }
+        }
+
+        console.log("✅ Extracted Triples:", triples);
+        return triples;
     } catch (error) {
-        console.error("Failed to parse YAML frontmatter:", error);
+        console.error("❌ Error parsing triples:", error);
         return [];
     }
 }

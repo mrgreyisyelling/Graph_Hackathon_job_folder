@@ -1,15 +1,15 @@
-import { TripleView } from "./view"; 
-import { Plugin, Notice, TFile, normalizePath } from "obsidian";
-import { load } from "js-yaml"; // ✅ Use js-yaml instead
+import { App, Plugin, TFile, Notice } from "obsidian";
 import { parseTriples } from "./parser";
-import { KnowledgeGraphStore } from "./store";
 import { mergeKnowledgeGraphs } from "./merge";
-import { Triple } from "./types";  // ✅ Import the Triple interface
-  // ✅ Import merge logic
+import { KnowledgeGraphStore } from "./store";
 
 export default class KnowledgeGraphPlugin extends Plugin {
-    private store: KnowledgeGraphStore = new KnowledgeGraphStore();
-    private outputFile = "triples.json"; // ✅ Path for output file
+    store!: KnowledgeGraphStore;  // ✅ Declare the property
+
+    constructor(app: App, manifest: any) {
+        super(app, manifest);
+        this.store = new KnowledgeGraphStore();  // ✅ Initialize in constructor
+    }
 
     async onload() {
         console.log("Loading Knowledge Graph Plugin");
@@ -18,157 +18,68 @@ export default class KnowledgeGraphPlugin extends Plugin {
             id: "merge-knowledge-graph",
             name: "Merge External Knowledge Graph",
             callback: async () => {
-                const primaryPath = "triples.json";  
-                const secondaryPath = "merged_triples.json";  
-                const outputPath = "triples.json";  
+                const primaryPath = "triples.json";
+                const secondaryPath = "merged_triples.json";
+                const outputPath = "triples.json";
 
                 await mergeKnowledgeGraphs(this.app, primaryPath, secondaryPath, outputPath);
                 new Notice("Knowledge Graph merged successfully.");
             },
         });
+
+        this.registerEvent(
+            this.app.vault.on("modify", async (file) => {
+                if (file instanceof TFile && file.extension === "md") {
+                    console.log(`File modified: ${file.path}`);
+                    await this.processFile(file);
+                }
+            })
+        );
     }
 
     async processFile(file: TFile) {
-        if (file.extension === "md") {
-            const content = await this.app.vault.read(file);
-            const triples = parseTriples(content);
+        console.log(`🟢 Processing file: ${file.path}`);
     
-            const masterData: Record<string, string> = {};
-            const liveData: Record<string, string> = {};
-            
-    
-            triples.forEach(triple => {
-                if (triple.version === "master_version") {
-                    masterData[triple.attribute] = triple.value;
-                } else if (triple.version === "live_version") {
-                    liveData[triple.attribute] = triple.value;
-                }
-            });
-    
-            const updatedYaml = `---
-            entity: "${triples[0].entity}"
-            master_version:
-            ${Object.entries(masterData).map(([attr, val]) => `  ${attr}: "${val}"`).join("\n")}
-            live_version:
-            ${Object.entries(liveData).map(([attr, val]) => `  ${attr}: "${val}"`).join("\n")}
-            ---
-            `;
-    
-            await this.app.vault.modify(file, updatedYaml);
-        }
-    }
-
-    async saveTriplesToFile() {
-        const path = normalizePath(this.outputFile);
-        let storedTriples = this.store.getTriples();
-    
-        // ✅ Remove duplicate triples
-        const uniqueTriples = Array.from(
-            new Map(storedTriples.map(triple => [JSON.stringify(triple), triple])).values()
-        );
-        
-        // ✅ Convert to JSON
-        const jsonData = JSON.stringify(uniqueTriples, null, 2);
-    
-        // ✅ Write to a local file in Obsidian
-        try {
-            let file = this.app.vault.getAbstractFileByPath(path);
-            if (file instanceof TFile) {
-                await this.app.vault.modify(file, jsonData);
-            } else {
-                await this.app.vault.create(path, jsonData);
-            }
-            console.log(`Triples saved to ${path}`);
-        } catch (err) {
-            console.error("Failed to save triples:", err);
-        }
-    }
-    
-
-    async loadKnowledgeGraph() {
-        const files = this.app.vault.getMarkdownFiles();
-        for (const file of files) {
-            await this.processFile(file);
-        }
-    }
-
-    async insertEntityLinks(file: TFile, content: string, triples: any[]) {
-        // Extract entities from the triples
-        const linkedEntities = new Set();
-    
-        triples.forEach(triple => {
-            linkedEntities.add(triple.attribute); // Attributes are now entities
-            linkedEntities.add(triple.value);     // Values are also entities
-        });
-    
-        // Convert to [[WikiLinks]]
-        const entityLinks = Array.from(linkedEntities)
-            .map(entity => `[[${entity}]]`)
-            .join("\n");
-    
-        // Check if links already exist to prevent duplicates
-        if (content.includes(entityLinks)) {
-            console.log(`Entity links already exist in ${file.path}, skipping update.`);
+        if (file.extension !== "md") {
+            console.log("❌ Skipping non-Markdown file.");
             return;
         }
     
-        // Append links to the bottom of the file
-        const updatedContent = `${content.trim()}\n\n## Related Entities\n${entityLinks}`;
+        const content = await this.app.vault.read(file);
+        console.log(`📄 File Content:\n${content}`);
     
-        // Write back to the file
-        await this.app.vault.modify(file, updatedContent);
-        console.log(`Updated ${file.path} with entity links.`);
-    }
-
-    async createEntities(triples: any[]) {
-        for (const triple of triples) {
-            const entityName = triple.value; // Ensuring values become entities
-            const attributeName = triple.attribute; // Ensuring attributes become entities
+        const triples = parseTriples(content);
+        console.log("🔍 Extracted Triples:", triples);
     
-            // ✅ Create notes for entities (values) & ensure they exist as triples
-            await this.ensureEntityNote(entityName);
-            await this.addEntityTriple(entityName);
-    
-            // ✅ Create notes for attributes & ensure they exist as triples
-            await this.ensureEntityNote(attributeName);
-            await this.addEntityTriple(attributeName);
+        if (triples.length === 0) {
+            console.warn(`⚠️ No triples found in ${file.path}.`);
+            return;
         }
-    }
-
-    async addEntityTriple(entityName: string) {
-        const selfTriple = { entity: entityName, attribute: "is_entity", value: entityName };
-        
-        // ✅ Check if it already exists to avoid duplicates
-        const existingTriples = this.store.getTriples();
-        const alreadyExists = existingTriples.some(
-            (t) => t.entity === entityName && t.attribute === "is_entity"
-        );
     
-        if (!alreadyExists) {
-            console.log(`Adding self-triple for ${entityName}`);
-            this.store.updateTriples(entityName, [selfTriple]);
-            await this.saveTriplesToFile();
-        }
+        const masterData: Record<string, string> = {};
+        const liveData: Record<string, string> = {};
+    
+        triples.forEach((triple) => {
+            if (triple.version === "master_version") {
+                masterData[triple.attribute] = triple.value;
+            } else if (triple.version === "live_version") {
+                liveData[triple.attribute] = triple.value;
+            }
+        });
+    
+        const updatedYaml = `---
+entity: "${triples[0].entity}"
+master_version:
+${Object.entries(masterData).map(([attr, val]) => `  ${attr}: "${val}"`).join("\n")}
+live_version:
+${Object.entries(liveData).map(([attr, val]) => `  ${attr}: "${val}"`).join("\n")}
+---
+    `;
+    
+        console.log(`📝 Updated YAML:\n${updatedYaml}`);
+    
+        await this.app.vault.modify(file, updatedYaml);
+        console.log(`✅ YAML updated in ${file.path}`);
     }
     
-
-    /**
-     * Ensures a note exists for a given entity or attribute.
-     * If it doesn’t exist, creates it with a default YAML frontmatter.
-     */
-    async ensureEntityNote(entityName: string) {
-        const entityFilePath = normalizePath(`${entityName}.md`);
-        let file = this.app.vault.getAbstractFileByPath(entityFilePath);
-    
-        if (!file) {
-            console.log(`Creating entity note: ${entityName}`);
-            const defaultYaml = `---\nentity: "${entityName}"\nattributes: []\n---\n\n`;
-            await this.app.vault.create(entityFilePath, defaultYaml);
-        }
-    }
-
-    onunload() {
-        console.log("Unloading Knowledge Graph Plugin");
-    }
 }
-
