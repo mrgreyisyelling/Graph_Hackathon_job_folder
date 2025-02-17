@@ -3,5 +3,6 @@
   "templater-obsidian",
   "obsidian-linter",
   "obsidian-state-switcher",
-  "knowledge-graph-plugin"
+  "knowledge-graph-plugin",
+  "tag-word-cloud"
 ]

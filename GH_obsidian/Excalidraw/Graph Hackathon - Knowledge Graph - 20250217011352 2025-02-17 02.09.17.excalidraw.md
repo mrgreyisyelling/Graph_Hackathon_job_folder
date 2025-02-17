@@ -1,0 +1,48 @@
+---
+
+excalidraw-plugin: parsed
+tags: [excalidraw]
+
+---
+==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
+
+
+# Excalidraw Data
+
+## Text Elements
+Every transaction of a currency writes to the KG
+because with every transaction, the state of the graph grows.
+
+This information inflation becomes embedded into the system.
+
+Tieing the amount of currency to the complexity of the supported KG
+
+
+Transactions within the economy drive the growth and size of the KG
+
+
+
+ ^NxGenKtL
+
+%%
+## Drawing
+```compressed-json
+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
+```
+%%
