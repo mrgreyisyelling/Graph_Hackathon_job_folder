@@ -1,0 +1,52 @@
+---
+
+excalidraw-plugin: parsed
+tags: [excalidraw]
+
+---
+==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
+
+
+# Excalidraw Data
+
+## Text Elements
+Knowledge Graph:
+- create a local data to use
+- create and manage the GRC-20 query process from the testnet
+- structure the create a local graph database process
+- provide the tools so the Agents can query/search/know the graph describing the game
+
+
+----------------------------
+
+Agents:
+- once given the data
+- how do they process it
+- how do they synthesize it into a desired combination
+- how do we abstract that into the game space
+- How does the AI read the game space and respond to the Player ^Oodc5RAe
+
+%%
+## Drawing
+```compressed-json
+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
+```
+%%
