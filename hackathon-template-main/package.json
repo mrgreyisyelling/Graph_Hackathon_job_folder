@@ -1,0 +1,14 @@
+{
+	"name": "clone-space",
+	"module": "main.ts",
+	"type": "module",
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@graphprotocol/grc-20": "^0.6.4",
+		"dotenv": "^16.4.7",
+		"viem": "^2.23.2"
+	}
+}
