@@ -167,50 +167,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "floating": {
-    "id": "9b9d6408c43f21f6",
-    "type": "floating",
-    "children": [
-      {
-        "id": "3ea94ebab39e4cce",
-        "type": "window",
-        "children": [
-          {
-            "id": "f5fdecc0649d9a99",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "d34a9f2990343b7a",
-                "type": "leaf",
-                "state": {
-                  "type": "empty",
-                  "state": {},
-                  "icon": "lucide-file",
-                  "title": "New tab"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 2360,
-        "y": 168,
-        "width": 1280,
-        "height": 1380,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "cd1c03a450b5240a",
+  "active": "daeb48c3fb6c77dc",
   "lastOpenFiles": [
+    "Daily Notes/2025-02-23/Graph Hackathon - Knowledge Graph - 20250223032518.md",
     "Excalidraw/Drawing 2025-02-23 15.25.27.excalidraw.md",
     "Daily Notes/2025-02-22/Graph Hackathon - Knowledge Graph - 20250222095102.md",
     "Daily Notes/2025-02-22/Graph Hackathon - Knowledge Graph - 20250222070128.md",
     "Daily Notes/2025-02-22/Graph Hackathon - Knowledge Graph - 20250222070116.md",
     "Daily Notes/2025-02-22/2025-02-22.md",
     "Daily Notes/2025-02-22",
-    "Daily Notes/2025-02-23/Graph Hackathon - Knowledge Graph - 20250223032518.md",
     "Daily Notes/2025-02-23/2025-02-23.md",
     "Daily Notes/2025-02-19/Graph Hackathon - Knowledge Graph - 20250219060254.md",
     "Daily Notes/2025-02-23",
