@@ -11,10 +11,14 @@
             "id": "daeb48c3fb6c77dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Daily Notes/2025-02-25/2025-02-25.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Graph Hackathon - Knowledge Graph - 20250222095102"
+              "title": "2025-02-25"
             }
           },
           {
@@ -183,6 +187,8 @@
   },
   "active": "daeb48c3fb6c77dc",
   "lastOpenFiles": [
+    "Daily Notes/2025-02-25/2025-02-25.md",
+    "Daily Notes/2025-02-25",
     "Daily Notes/2025-02-23/2025-02-23.md",
     "Daily Notes/2025-02-23",
     "Daily Notes/2025-02-22/2025-02-22.md",
@@ -212,18 +218,12 @@
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217062104.md",
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217062057.md",
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217060753.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217044908.md",
     "Daily Notes/2025-02-17",
     "triples.json",
-    "Entities/Portal.md",
-    "Entities/Category.md",
-    "Entities/High.md",
     "Entities",
     "Excalidraw/Michael Penta - 20250216062012 2025-02-16 06.20.19.excalidraw.excalidraw",
     "attachements/Pasted image 20250211040802.png",
     "attachements",
-    "templates",
-    "Daily Notes/2025-02-16",
     "attachements/Pasted Image 20250215182633_851.png",
     "attachements/Pasted image 20250215144609.png",
     "attachements/Pasted image 20250215144559.png",
