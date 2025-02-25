@@ -7,3 +7,4 @@ childcare_db/childcare_data.csv
 childcare_db/*.db
 childcare_db/venv*
 childcare_db/__pycache__*
+GH_obsidian/.obsidian/workspace.json
