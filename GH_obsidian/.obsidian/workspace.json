@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Notes/2025-02-25/2025-02-25.md",
+                "file": "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225104715.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-02-25"
+              "title": "Graph Hackathon - Knowledge Graph - 20250225104715"
             }
           },
           {
@@ -185,8 +185,48 @@
       "templater-obsidian:Templater": false
     }
   },
+  "floating": {
+    "id": "8c6ee8a17db669e5",
+    "type": "floating",
+    "children": [
+      {
+        "id": "84f8f2b4989348f3",
+        "type": "window",
+        "children": [
+          {
+            "id": "f84f5edc0aad65e0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "2352c5c4bbe7ae77",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "Excalidraw/Graph Hackathon - Knowledge Graph - 20250225074025 2025-02-25 07.40.49.excalidraw.md"
+                  },
+                  "icon": "excalidraw-icon",
+                  "title": "Graph Hackathon - Knowledge Graph - 20250225074025 2025-02-25 07.40.49.excalidraw"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 960,
+        "y": 0,
+        "width": 960,
+        "height": 1146,
+        "maximize": false,
+        "zoom": 2
+      }
+    ]
+  },
   "active": "daeb48c3fb6c77dc",
   "lastOpenFiles": [
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250225074025 2025-02-25 07.40.49.excalidraw.md",
+    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225104715.md",
+    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225074025.md",
     "Daily Notes/2025-02-25/2025-02-25.md",
     "Daily Notes/2025-02-25",
     "Daily Notes/2025-02-23/2025-02-23.md",
@@ -215,9 +255,6 @@
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217065233.md",
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217064647.md",
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217063131.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217062104.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217062057.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217060753.md",
     "Daily Notes/2025-02-17",
     "triples.json",
     "Entities",
