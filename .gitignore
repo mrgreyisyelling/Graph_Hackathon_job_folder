@@ -3,8 +3,10 @@
 Graph_Hackathon_job_folder.zip
 Child_care_raw_data/*
 .env
-childcare_db/childcare_data.csv
-childcare_db/*.db
-childcare_db/venv*
-childcare_db/__pycache__*
+Full_Stack_System/DataBase_creation/childcare_db/childcare.db
+Full_Stack_System/DataBase_creation/childcare_db/childcare_data.csv
+Full_Stack_System/DataBase_creation/childcare_db/*.db
+Full_Stack_System/DataBase_creation/childcare_db/venv*
+Full_Stack_System/DataBase_creation/childcare_db/__pycache__*
 GH_obsidian/.obsidian/workspace.json
+Full_Stack_System/DataBase_creation/childcare_db/childcare_graph.db
