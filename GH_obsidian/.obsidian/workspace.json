@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4f05ec16bd4988c0",
+        "id": "cec01aa0efb80213",
         "type": "tabs",
         "children": [
           {
-            "id": "daeb48c3fb6c77dc",
+            "id": "c28ba458872a3638",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Daily Notes/2025-02-26/Graph Hackathon - Knowledge Graph - 20250226012126.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Graph Hackathon - Knowledge Graph - 20250226012126"
             }
           }
         ]
@@ -167,11 +171,17 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "daeb48c3fb6c77dc",
+  "active": "c28ba458872a3638",
   "lastOpenFiles": [
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250225062537 2025-02-25 19.26.42.excalidraw.md",
+    "Daily Notes/2025-02-26/Graph Hackathon - Knowledge Graph - 20250226012126.md",
+    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225062537.md",
+    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225075733.md",
+    "Daily Notes/2025-02-26",
     "Excalidraw/Graph Hackathon - Knowledge Graph - 20250225074025 2025-02-25 07.40.49.excalidraw.md",
-    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225104715.md",
     "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225074025.md",
+    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225104715.md",
+    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225053215- Project Spaceman.md",
     "Daily Notes/2025-02-25/2025-02-25.md",
     "Daily Notes/2025-02-25",
     "Daily Notes/2025-02-23/Graph Hackathon - Knowledge Graph - 20250223032518.md",
@@ -194,18 +204,12 @@
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217071330.md",
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217071038.md",
     "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217070710.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217065608.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217065243.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217065233.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217064647.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217063131.md",
     "Daily Notes/2025-02-17",
     "triples.json",
     "Entities",
     "Excalidraw/Michael Penta - 20250216062012 2025-02-16 06.20.19.excalidraw.excalidraw",
     "attachements/Pasted image 20250211040802.png",
     "attachements",
-    "templates",
     "attachements/Pasted Image 20250215182633_851.png",
     "attachements/Pasted image 20250215144609.png",
     "attachements/Pasted image 20250215144559.png",
