@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "cec01aa0efb80213",
+        "id": "51c393e2f934fa5c",
         "type": "tabs",
         "children": [
           {
-            "id": "c28ba458872a3638",
+            "id": "627d886a1ea56848",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Notes/2025-02-26/Graph Hackathon - Knowledge Graph - 20250226012126.md",
+                "file": "Daily Notes/2025-03-01/2025-03-01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graph Hackathon - Knowledge Graph - 20250226012126"
+              "title": "2025-03-01"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "32b71be7b008881c",
@@ -171,54 +172,94 @@
       "templater-obsidian:Templater": false
     }
   },
+  "floating": {
+    "id": "61e12918ac857bad",
+    "type": "floating",
+    "children": [
+      {
+        "id": "f709da57337dac51",
+        "type": "window",
+        "children": [
+          {
+            "id": "db11000133c44c1f",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c28ba458872a3638",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Daily Notes/2025-03-01/Graph Hackathon - Knowledge Graph - 20250301030822.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Graph Hackathon - Knowledge Graph - 20250301030822"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 1080,
+        "y": 930,
+        "width": 1080,
+        "height": 930,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "c28ba458872a3638",
   "lastOpenFiles": [
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250225062537 2025-02-25 19.26.42.excalidraw.md",
-    "Daily Notes/2025-02-26/Graph Hackathon - Knowledge Graph - 20250226012126.md",
-    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225062537.md",
-    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225075733.md",
-    "Daily Notes/2025-02-26",
+    "Daily Notes/2025-03-01/2025-03-01.md",
+    "Daily Notes/2025-03-01/Graph Hackathon - Knowledge Graph - 20250301030822.md",
+    "Daily Notes/2025-02-28/2025-02-28.md",
+    "Daily Notes/2025-03-01",
+    "Daily Notes/2025-02-27/Michael Penta - 20250227115537 - Task List for Setting Up & Publishing Data on Geo Genesis Testnet.md",
+    "Daily Notes/2025-02-28",
+    "Daily Notes/2025-02-27/Untitled.canvas",
+    "Daily Notes/2025-02-27/Graph Hackathon - Knowledge Graph - 20250227110632.md",
+    "Daily Notes/2025-02-27/Graph Hackathon - Knowledge Graph - 20250227042126.md",
+    "Daily Notes/2025-02-27/Graph Hackathon - Knowledge Graph - 20250227111547.md",
+    "Daily Notes/2025-02-27/Graph Hackathon - Knowledge Graph - 20250225062537 2025-02-25 19.26.42.excalidraw.png",
     "Excalidraw/Graph Hackathon - Knowledge Graph - 20250225074025 2025-02-25 07.40.49.excalidraw.md",
-    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225074025.md",
-    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225104715.md",
-    "Daily Notes/2025-02-25/Graph Hackathon - Knowledge Graph - 20250225053215- Project Spaceman.md",
-    "Daily Notes/2025-02-25/2025-02-25.md",
-    "Daily Notes/2025-02-25",
-    "Daily Notes/2025-02-23/Graph Hackathon - Knowledge Graph - 20250223032518.md",
-    "Excalidraw/Drawing 2025-02-23 15.25.27.excalidraw.md",
-    "Daily Notes/2025-02-22/Graph Hackathon - Knowledge Graph - 20250222095102.md",
-    "Daily Notes/2025-02-22/Graph Hackathon - Knowledge Graph - 20250222070128.md",
-    "Daily Notes/2025-02-22/Graph Hackathon - Knowledge Graph - 20250222070116.md",
-    "Daily Notes/2025-02-22/2025-02-22.md",
-    "Daily Notes/2025-02-22",
-    "Daily Notes/2025-02-23/2025-02-23.md",
-    "Daily Notes/2025-02-19/Graph Hackathon - Knowledge Graph - 20250219060254.md",
-    "Daily Notes/2025-02-23",
-    "Daily Notes/2025-02-19/2025-02-19.md",
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250219060254 2025-02-19 07.08.54.excalidraw.md",
-    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250219060254 2025-02-19 06.03.10.excalidraw.md",
     "Excalidraw/Graph Hackathon - Knowledge Graph - 20250219060254 2025-02-19 07.48.10.excalidraw.md",
     "Excalidraw/Graph Hackathon - Knowledge Graph - 20250219060254 2025-02-19 07.37.02.excalidraw.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217071813.md",
-    "Daily Notes/2025-02-19",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217071330.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217071038.md",
-    "Daily Notes/2025-02-17/Graph Hackathon - Knowledge Graph - 20250217070710.md",
-    "Daily Notes/2025-02-17",
-    "triples.json",
-    "Entities",
-    "Excalidraw/Michael Penta - 20250216062012 2025-02-16 06.20.19.excalidraw.excalidraw",
-    "attachements/Pasted image 20250211040802.png",
-    "attachements",
-    "attachements/Pasted Image 20250215182633_851.png",
-    "attachements/Pasted image 20250215144609.png",
-    "attachements/Pasted image 20250215144559.png",
-    "attachements/Pasted image 20250215144550.png",
-    "attachements/Pasted Image 20250215141309_522.png",
-    "attachements/Pasted Image 20250215141157_341.png",
-    "attachements/Pasted Image 20250215141114_081.png",
-    "attachements/Pasted Image 20250215132503_888.png",
-    "attachements/Pasted image 20250214160616.png",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250219060254 2025-02-19 07.08.54.excalidraw.md",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250219060254 2025-02-19 06.03.10.excalidraw.md",
+    "Excalidraw/Drawing 2025-02-17 13.04.28.excalidraw.md",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250217011352 2025-02-17 02.09.17.excalidraw.md",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250217011352 2025-02-17 01.35.44.excalidraw.md",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250216090323 2025-02-16 09.05.23.excalidraw.md",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 14.35.44.excalidraw.md",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 13.47.11.excalidraw.md",
+    "Excalidraw/Graph Hackathon - Knowledge Graph - 20250215010849 2025-02-15 13.24.12.excalidraw.md",
+    "Excalidraw/2025-02-14 2025-02-14 09.08.32.excalidraw.md",
+    "Excalidraw/20250213103133 2025-02-13 10.37.49.excalidraw.md",
+    "Excalidraw/20250213080644 2025-02-13 08.07.10.excalidraw.md",
+    "Excalidraw/20250213061602 2025-02-13 06.16.11.excalidraw.md",
+    "Excalidraw/20250212113302 2025-02-12 11.33.11.excalidraw.md",
+    "Excalidraw/20250212102709 2025-02-12 11.22.22.excalidraw.md",
+    "Excalidraw/20250212093833 - designing the dapp 2025-02-12 10.07.12.excalidraw.md",
+    "Daily Notes/2025-02-27/Graph Hackathon - Knowledge Graph - 20250225074025 2025-02-25 07.40.49.excalidraw.png",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 4/DSC07109.JPG",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 4/20250226_140128.jpg",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 4",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 3/DSC07108.JPG",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 3/DSC07107.JPG",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 3/DSC07106.JPG",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 3/DSC07105.JPG",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 3/DSC07104.JPG",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 3/DSC07103.JPG",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 3",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder 2",
+    "Daily Notes/2025-02-27/Photos-001/Untitled Folder",
+    "Daily Notes/2025-02-27/Photos-001",
+    "Daily Notes/2025-02-27/Photos-001.zip",
+    "Daily Notes/2025-02-27/Unconfirmed 464359.crdownload",
+    "Daily Notes/2025-02-27",
     "Daily Notes/2025-02-12/system and flow for interface.canvas",
     "Daily Notes/2025-02-12/Untitled.canvas",
     "archive/Untitled.canvas"

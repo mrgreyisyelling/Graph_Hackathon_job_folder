@@ -1,0 +1,38 @@
+{
+	"nodes":[
+		{"id":"1724b536df5f6e3c","x":-120,"y":220,"width":250,"height":60,"type":"text","text":"QR Code"},
+		{"id":"fb39ebd255a1941e","x":-420,"y":0,"width":250,"height":60,"type":"text","text":"QR code Generator"},
+		{"id":"5376d21a83ab2df4","x":-780,"y":0,"width":250,"height":60,"type":"text","text":"URL"},
+		{"id":"d7969ba4be6b20fd","x":-1100,"y":-360,"width":260,"height":60,"type":"text","text":"Create New Node"},
+		{"id":"08789b4737d079f6","x":-780,"y":-360,"width":250,"height":60,"type":"text","text":"Register and receive unique ID"},
+		{"id":"63a8b4248bf9002d","x":-780,"y":-200,"width":250,"height":60,"type":"text","text":"combine with base URL"},
+		{"id":"544f2b0726dbcf8f","x":157,"y":-403,"width":250,"height":60,"type":"text","text":"Node"},
+		{"id":"59c0ce2a0b48417d","x":560,"y":-403,"width":250,"height":60,"type":"text","text":"What is the node associated with?"},
+		{"id":"ce98f6fd378ac65c","x":810,"y":-307,"width":164,"height":60,"type":"text","text":"other nodes"},
+		{"id":"727713a5d4eba19d","x":810,"y":-234,"width":250,"height":60,"type":"text","text":"Location"},
+		{"id":"ed3464576f008798","x":689,"y":-53,"width":250,"height":60,"type":"text","text":"through access "},
+		{"id":"a1344c9d6394cd3e","x":1023,"y":-53,"width":250,"height":60,"type":"text","text":"through reference"},
+		{"id":"9fccb4a391ebed3a","x":1316,"y":-625,"width":250,"height":60,"type":"text","text":"node"},
+		{"id":"c41ea821d2c85626","type":"text","text":"qr","x":1640,"y":-367,"width":250,"height":60},
+		{"id":"0bddae330dc6576c","type":"text","text":"qr","x":1316,"y":-373,"width":250,"height":60},
+		{"id":"428b2353c43e5162","x":1316,"y":-160,"width":250,"height":60,"type":"text","text":"Time period\n"},
+		{"id":"875257363131c992","type":"text","text":"Time period\n","x":1640,"y":-155,"width":250,"height":50}
+	],
+	"edges":[
+		{"id":"4dac0cb434b829f1","fromNode":"fb39ebd255a1941e","fromSide":"bottom","toNode":"1724b536df5f6e3c","toSide":"left"},
+		{"id":"5385d10bb412e7c9","fromNode":"5376d21a83ab2df4","fromSide":"right","toNode":"fb39ebd255a1941e","toSide":"left"},
+		{"id":"cb1f0bf52bc4b7ce","fromNode":"d7969ba4be6b20fd","fromSide":"right","toNode":"08789b4737d079f6","toSide":"left"},
+		{"id":"fe66c532832aa0c7","fromNode":"08789b4737d079f6","fromSide":"bottom","toNode":"63a8b4248bf9002d","toSide":"top"},
+		{"id":"61dd66668b8c6279","fromNode":"63a8b4248bf9002d","fromSide":"bottom","toNode":"5376d21a83ab2df4","toSide":"top"},
+		{"id":"543886f8bbfac187","fromNode":"08789b4737d079f6","fromSide":"right","toNode":"544f2b0726dbcf8f","toSide":"left"},
+		{"id":"f7f85587c39585dc","fromNode":"544f2b0726dbcf8f","fromSide":"right","toNode":"59c0ce2a0b48417d","toSide":"left"},
+		{"id":"a8d7136d1fe504bc","fromNode":"59c0ce2a0b48417d","fromSide":"bottom","toNode":"ce98f6fd378ac65c","toSide":"left"},
+		{"id":"49f7115a9d4e06ca","fromNode":"59c0ce2a0b48417d","fromSide":"bottom","toNode":"727713a5d4eba19d","toSide":"left"},
+		{"id":"84faa4122cd2a5ed","fromNode":"727713a5d4eba19d","fromSide":"bottom","toNode":"ed3464576f008798","toSide":"top"},
+		{"id":"414c87610c91d8ba","fromNode":"727713a5d4eba19d","fromSide":"bottom","toNode":"a1344c9d6394cd3e","toSide":"top"},
+		{"id":"a2ce0e0171a879e8","fromNode":"0bddae330dc6576c","fromSide":"top","toNode":"9fccb4a391ebed3a","toSide":"bottom"},
+		{"id":"3dd1679043317fd5","fromNode":"c41ea821d2c85626","fromSide":"top","toNode":"9fccb4a391ebed3a","toSide":"bottom"},
+		{"id":"e55f5530c44da5d5","fromNode":"428b2353c43e5162","fromSide":"top","toNode":"0bddae330dc6576c","toSide":"bottom"},
+		{"id":"ff63b2deaf493aa2","fromNode":"875257363131c992","fromSide":"top","toNode":"c41ea821d2c85626","toSide":"bottom"}
+	]
+}
